@@ -22,6 +22,7 @@ namespace MVVM.View
         public Posts()
         {
             InitializeComponent();
+            DataContext = this;
         }
     }
 }
