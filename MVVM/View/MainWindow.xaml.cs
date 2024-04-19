@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MVVM.View;
 
 
 namespace MVVM
@@ -28,6 +29,27 @@ namespace MVVM
         {
             InitializeComponent();
             DataContext = new MainViewModel();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Posts window = new Posts();
+            window.Show();
+            Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Things window = new Things();
+            window.Show();
+            Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Card window = new Card();
+            window.Show();
+            Close();
         }
     }
 }

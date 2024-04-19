@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="30" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center">Добро пожаловать в приложение Подслушано МПТ!</TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Background="Gold" Padding="10 5" Content="Посты" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_Click"/>
+            <Button Background="Gold" Padding="10 5" Content="Потеряли вещь?" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Click="Button_Click_1"/>
+            <Button Background="Gold" Padding="10 5" Content="Картотека" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Click="Button_Click_2"/>
+        </Grid>
     </Grid>
 </Window>
