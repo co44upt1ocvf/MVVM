@@ -12,7 +12,6 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
         <ListBox ItemsSource="{Binding Posts}" SelectedItem="{Binding Selected}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -23,7 +22,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -34,16 +32,13 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-
             <TextBlock Text="Введите тему поста:" FontSize="15" TextWrapping="Wrap" VerticalAlignment="Center"/>
             <TextBox Grid.Row="1" Text="{Binding Selected.Title}"/>
-
             <TextBlock Grid.Row="2" Text="Напишите что-нибудь:" FontSize="15" TextWrapping="Wrap" VerticalAlignment="Center"/>
             <TextBox Grid.Row="3" Text="{Binding Selected.Content}"/>
-
-            <Button Grid.Row="4" Content="Добавить" FontSize="15" Command="{Binding AddCommand}" IsEnabled="{Binding Selected != null}"/>
-            <Button Grid.Row="5" Content="Изменить" FontSize="15" Command="{Binding EditCommand}" IsEnabled="{Binding Selected != null}"/>
-            <Button Grid.Row="6" Content="Удалить" FontSize="15" Command="{Binding DeleteCommand}" IsEnabled="{Binding Selected != null}"/>
+            <Button Grid.Row="4" Content="Добавить" FontSize="15" Command="{Binding AddCommand}"/>
+            <Button Grid.Row="5" Content="Изменить" FontSize="15" Command="{Binding EditCommand}"/>
+            <Button Grid.Row="6" Content="Удалить" FontSize="15" Command="{Binding DeleteCommand}"/>
         </Grid>
     </Grid>
 </Window>
