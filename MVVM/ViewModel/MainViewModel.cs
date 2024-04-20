@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MVVM.ViewModel
 {
-    internal class MainViewModel : BindingHelpers
+    internal class MainViewModel : BindingHelper
     {
         public MainViewModel() 
         { 

@@ -3,10 +3,47 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MVVM.View"
+        xmlns:local="clr-namespace:MVVM.View" 
+        xmlns:viewmodel="clr-namespace:MVVM.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:PostsViewModel}"
         mc:Ignorable="d"
         Title="Posts" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox ItemsSource="{Binding Posts}" SelectedItem="{Binding Selected}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Title}"/>
+                        <TextBlock Text="{Binding Content}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Введите тему поста:" FontSize="15" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Text="{Binding Selected.Title}"/>
+
+            <TextBlock Grid.Row="2" Text="Напишите что-нибудь:" FontSize="15" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="3" Text="{Binding Selected.Content}"/>
+
+            <Button Grid.Row="4" Content="Добавить" FontSize="15" Command="{Binding AddCommand}" IsEnabled="{Binding Selected != null}"/>
+            <Button Grid.Row="5" Content="Изменить" FontSize="15" Command="{Binding EditCommand}" IsEnabled="{Binding Selected != null}"/>
+            <Button Grid.Row="6" Content="Удалить" FontSize="15" Command="{Binding DeleteCommand}" IsEnabled="{Binding Selected != null}"/>
+        </Grid>
     </Grid>
 </Window>

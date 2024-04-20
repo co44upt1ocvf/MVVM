@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MVVM.ViewModel.Helpers
 {
-    internal class BindingHelpers : INotifyPropertyChanged
+    internal class BindingHelper : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

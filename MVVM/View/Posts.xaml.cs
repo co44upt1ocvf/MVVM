@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVM.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace MVVM.View
         public Posts()
         {
             InitializeComponent();
-            DataContext = this;
+            DataContext = new PostsViewModel();
         }
     }
 }
